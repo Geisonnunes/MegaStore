@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEGASTORE | E-COMMERCE</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="header-inner-content">
+      <h1 class="logo">MEGA<span>STORE</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="Login.html" id="login-icon">Login</a></li>
+        </ul>
+      </nav>
+      <div class="icon-cart">
+        <img src="/img/carrinho-carrinho (1).png" alt="Carrinho" id="cart-icon" />
+        <img src="/img/menu.png" class="menu-button" alt="Menu" />
+        <span>0</span>
+      </div>
+    </div>
+  </div>
+  <div class="cartTab">
+    <h1>Carrinho de compras</h1>
+    <div class="listCart">
+    </div>
+    <div class="btn">
+      <button class="close">Sair</button>
+      <button class="checkOut">Finalizar Compras</button>
+    </div>
+  </div>
+  <header>
+    <div class="header-inner-content">
+      <div class="header-bottom-side">
+        <div class="header-bottom-side-left">
+          <h2>De Um Novo Estilo ao Seu Trabalho!</h2>
+          <p>
+            O sucesso nem sempre está relacionado à grandeza.
+            Ele está relacionado à consistência. O trabalho
+            árduo e consistente supera o sucesso ocasional. A
+            verdadeira grandeza surge da perseverança contínua.
+          </p>
+          <button>Ver Agora &#8594;</button>
+        </div>
+        <div class="header-bottom-side-right">
+          <img src="/img/gaming-msi-header.png" alt="Gaming MSI" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="gray-background">
+      <div class="page-inner-content">
+        <div class="cols cols-3">
+          <img src="/img/product-1.png" alt="" />
+          <img src="/img/product-2.png" alt="" />
+          <img src="/img/product-3.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="page-inner-content">
+        <h3 class="section-title">Produtos Selecionados</h3>
+        <div class="subtitle-underline"></div>
+        <div class="cols cols-4" id="product-list">
+            <!-- Os produtos serão inseridos aqui -->
+        </div>
+    </div>
+      <!-- <div class="page-inner-content">
+        <h3 class="section-title">Produtos Selecionado</h3>
+        <div class="subtitle-underline"></div>
+        <div class="cols cols-4">
+
+          <div class="product">
+            <img src="/img/product-4.png" alt="" class="product-image">
+            <p class="product-name">Combo Gamer</p>
+            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+            <p class="product-price">R$ 1.200,00</p>
+            <button class="add-to-cart" data-name="Combo Gamer" data-price="1200.00">Adicionar ao Carrinho</button>
+          </div>
+
+          <div class="product">
+            <img src="/img/product-5.png" alt="" class="product-name">
+            <p class="product-name">Placa De Vídeo Msi Geforce 1650</p>
+            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+            <p class="product-price">R$ 879,90</p>
+            <button class="add-to-cart" data-name="Placa De Vídeo Msi Geforce 1650" data-price="879,90">Adicionar ao
+              Carrinho</button>
+          </div>
+
+          <div class="product">
+            <img src="/img/product-6.png" alt="" class="product-name">
+            <p class="product-name"></p> Dualsense Para Ps5</p>
+            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+            <p class="product-price">R$ 388,79</p>
+            <button class="add-to-cart" data-name="Dualsense Para Ps5" data-price="388,79">Adicionar ao
+              Carrinho</button>
+          </div>
+
+          <div class="product">
+            <img src="/img/product-7.png" alt="" class="product-name">
+            <p class="product-name">Cadeira Gamer</p>
+            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+            <p class="product-price">R$ 899,90</p>
+            <button class="add-to-cart" data-name="Cadeira Gamer" data-price="899,90">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <div class="page-inner-content">
+          <h3 class="section-title">Ultimos Produtos!</h3>
+          <div class="subtitle-underline"></div>
+          <div class="cols cols-4">
+
+            <div class="product">
+              <img src="/img/product-8.png" alt="" class="product-name">
+              <p class="product-name">Combo Gamer</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 899,90</p>
+              <button class="add-to-cart" data-name="Combo Gamer" data-price="899,90">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-5.png" alt="" class="product-name">
+              <p class="product-name">Placa De Vídeo Msi Geforce 1650</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 879,90</p>
+              <button class="add-to-cart" data-name="Placa De Vídeo Msi Geforce 1650" data-price="879,90">Adicionar ao
+                Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-6.png" alt="" class="product-name">
+              <p class="product-name"></p> Dualsense Para Ps5</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 388,79</p>
+              <button class="add-to-cart" data-name="Dualsense Para Ps5" data-price="388,79">Adicionar ao
+                Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-7.png" alt="" class="product-name">
+              <p class="product-name">Cadeira Gamer</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 899,90</p>
+              <button class="add-to-cart" data-name="Cadeira Gamer" data-price="899,90">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-8.png" alt="" class="product-name">
+              <p class="product-name"></p> IPhone 14 Pro Max</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 10.299,00</p>
+              <button class="add-to-cart" data-name="IPhone 14 Pro Max" data-price="10.299,00">Adicionar ao
+                Carrinho</button>
+
+            </div>
+
+            <div class="product">
+              <img src="/img/product-9.png" alt="" class="product-name">
+              <p class="product-name">Galaxy S23 Ultra</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 4.859,10</p>
+              <button class="add-to-cart" data-name="Galaxy S23 Ultra" data-price="4.859,10">Adicionar ao
+                Carrinho</button>
+
+            </div>
+
+            <div class="product">
+              <img src="/img/product-10.png" alt="" class="product-name">
+              <p class="product-name">ASUS ROG Phone II</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 8.549,10</p>
+              <button class="add-to-cart" data-name="ASUS ROG Phone II" data-price="8.549,10">Adicionar ao
+                Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-11.png" alt="" class="product-name">
+              <p class="product-name"></p> 12S Ultra</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 7.866,72</p>
+              <button class="add-to-cart" data-name="12S Ultra" data-price="7.866,72">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-12.png" alt="" class="product-name">
+              <p class="product-name"></p> Series X 1TB</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 3.860,00</p>
+              <button class="add-to-cart" data-name="Series X 1TB" data-price="3.860,00">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-13.png" alt="" class="product-name">
+              <p class="product-name"></p> T80 Ferrari 488 GTB </p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 1.806,89</p>
+              <button class="add-to-cart" data-name="T80 Ferrari 488 GTB" data-price="1.806,89">Adicionar ao
+                Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-14.png" alt="" class="product-name">
+              <p class="product-name"> PlayStation 5</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 3.559,90</p>
+              <button class="add-to-cart" data-name="PlayStation 5" data-price="3.559,90">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product">
+              <img src="/img/product-15.png" alt="" class="product-name">
+              <p class="product-name">Gabinete Gamer</p>
+              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+              <p class="product-price">R$ 1.000,00</p>
+              <button class="add-to-cart" data-name="Gabinete Gamer" data-price="1.000,00">Adicionar ao
+                Carrinho</button>
+            </div>
+          </div>
+
+        </div>
+      </div> -->
+    </div>
+    <div class="gray-background">
+      <div class="header-inner-content">
+        <div class="header-bottom-side exclusive-container">
+          <div class="header-bottom-side-left">
+            <h2>Smart Band 4 </h2>
+            <p>
+              O Smart Band 4 possui uma tela AMOLED 39,9% maior que a do Mi Band 3. Esta tela é totalmente digital e
+              permite ajuste de brilho, garantindo uma visualização sempre clara e nítida
+            </p>
+            <button>Ver Agora &#8594;</button>
+          </div>
+          <div class="header-bottom-side-right">
+            <img src="/img/exclusive.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="page-inner-content">
+        <div class="testimonials">
+          <div class="testimonial">
+            <p>"</p>
+            <p>A MegaStore é o melhor site de e-commerce do Brasil, reconhecida pela sua ampla variedade de produtos e
+              pelo atendimento excepcional aos clientes. Com uma interface intuitiva e segura, a MegaStore proporciona
+              uma experiência de compra online inigualável, oferecendo desde eletrônicos e gadgets de última geração
+              até artigos de moda e decoração. Comprometida com a qualidade e a satisfação do consumidor, a MegaStore
+              se destaca pela rapidez na entrega e pelas ofertas imperdíveis, consolidando-se como a primeira escolha
+              dos brasileiros quando o assunto é compras online. Seja para equipar seu escritório, renovar seu
+              guarda-roupa ou encontrar o presente perfeito, a MegaStore é o destino ideal para quem busca comodidade,
+              variedade e preços competitivos.</p>
+            <p>A Revolução do E-Commerce no Brasil</p>
+          </div>
+
+          <div class="testimonial">
+            <p>"</p>
+            <p>A MegaStore não é apenas um site de e-commerce; é um verdadeiro parceiro dos brasileiros em suas
+              jornadas de compra. Conhecida por sua confiabilidade e excelência, a MegaStore oferece uma plataforma
+              onde os clientes podem encontrar produtos de alta qualidade das marcas mais renomadas do mercado. Com um
+              sistema de pagamento seguro e diversas opções de entrega, o site garante que suas compras cheguem até
+              você de maneira rápida e eficiente. Além disso, a MegaStore se diferencia pelo seu atendimento ao
+              cliente, com uma equipe dedicada pronta para resolver qualquer dúvida ou problema, tornando sua
+              experiência de compra ainda mais satisfatória.
+            </p>
+            <p>O Melhor E-Commerce do Brasil</p>
+          </div>
+
+          <div class="testimonial">
+            <p>"</p>
+            <p>Na MegaStore, a inovação e a satisfação do cliente caminham lado a lado. O site se destaca por estar
+              sempre à frente das tendências, trazendo as novidades mais quentes do mercado diretamente para você.
+              Seja para comprar o último lançamento tecnológico, os itens mais procurados em moda, ou acessórios para
+              casa e jardim, a MegaStore tem tudo que você precisa em um só lugar. Com promoções constantes e um
+              programa de fidelidade atrativo, a MegaStore valoriza cada cliente, oferecendo vantagens exclusivas e
+              descontos especiais. É por isso que, quando se trata de e-commerce no Brasil, a MegaStore é sinônimo de
+              qualidade, confiança e modernidade.</p>
+            <p>Inovação e Tecnologia a Serviço do Cliente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="gray-background">
+    <div class="page-inner-content footer-content">
+      <div class="download-options">
+        <p>Baixe nosso Aplicativo</p>
+        <p>Baixe nosso Aplicativo para Android e IOS</p>
+        <div>
+          <img src="/img/app-store.png" alt="">
+          <img src="/img/play-store.png" alt="">
+        </div>
+      </div>
+
+      <div class="logo-footer">
+        <h1 class="logo">MEGA<span>STORE</span></h1>
+        <p>
+          Nosso objetivo é proporcionar aos clientes a melhor experiência de compra online, oferecendo uma vasta gama de
+          produtos de alta qualidade, preços competitivos e um atendimento ao cliente excepcional.
+        </p>
+      </div>
+
+      <div class="links-footer">
+        <ul>
+          <li>Copons</li>
+          <li>Blog</li>
+          <li>Politicas</li>
+          <li>Torne-se um apoiador</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="page-inner-content" />
+
+    <div class="page-inner-content copyright">
+      <p> Copyright 2024 - Geison Nunes - Todos os direitos Reservados</p>
+    </div>
+  </footer>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
