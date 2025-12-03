@@ -1,3 +1,50 @@
-node_modules
-dist
-build
+# Dependências
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+bun.lockb
+
+# Build / distribuição
+dist/
+build/
+out/
+coverage/
+
+# Ambientes
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Banco / cache
+*.sqlite
+*.db
+.cache/
+tmp/
+
+# Configs geradas automaticamente
+.next/
+.vite/
+.angular/
+.storybook/
+
+# VS Code
+.vscode/
+
+# Arquivos ignorados comuns
+*.zip
+*.rar
+*.tar
+*.gz
+
+# Imagens e binários
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.ico
