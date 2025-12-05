@@ -82,131 +82,9 @@ const mockedData = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-    const cartIcon = document.getElementById("cart-icon");
-    const cartTab = document.querySelector(".cartTab");
-    const cartItemsContainer = document.querySelector(".listCart");
-    const cartTotal = document.createElement("div");
-    cartTotal.id = "cart-total";
-    cartTab.insertBefore(cartTotal, cartTab.querySelector(".btn"));
-    const checkoutButton = document.querySelector(".checkOut");
-    const closeCartButton = document.querySelector(".close");
-    const cartCountSpan = document.querySelector(".icon-cart span");
 
-    let cart = [];
-
-    cartIcon.addEventListener("click", () => {
-        document.body.classList.toggle("showCart");
-    });
-
-    closeCartButton.addEventListener("click", () => {
-        document.body.classList.remove("showCart");
-    });
-
-    function addItemToCart(name, price) {
-        for (let i = 0; i < cart.length; i++) {
-            if (cart[i].name === name) {
-                cart[i].quantity++;
-                updateCartDisplay();
-                return;
-            }
-        }
-        const item = { name, price, quantity: 1 };
-        cart.push(item);
-        updateCartDisplay();
-    }
-
-    function updateCartDisplay() {
-        cartItemsContainer.innerHTML = "";
-        let total = 0;
-        cart.forEach((item) => {
-            const div = document.createElement("div");
-            div.className = "item";
-            div.innerHTML = `
-                  <div>${item.name}</div>
-                  <div>R$ ${item.price.toFixed(2)}</div>
-                  <div class="quantity">
-                      <span class="decrease">-</span>
-                      <span>${item.quantity}</span>
-                      <span class="increase">+</span>
-                  </div>
-                  <button class="remove-item">Remover</button>
-              `;
-            cartItemsContainer.appendChild(div);
-            total += item.price * item.quantity;
-        });
-        cartTotal.textContent = `Total: R$ ${total.toFixed(2)}`;
-
-        document.querySelectorAll(".remove-item").forEach((button) => {
-            button.addEventListener("click", function () {
-                const name = this.parentElement.querySelector("div:nth-child(1)").textContent;
-                removeItemFromCart(name);
-            });
-        });
-
-        document.querySelectorAll(".increase").forEach((button) => {
-            button.addEventListener("click", function () {
-                const name = this.parentElement.previousElementSibling.previousElementSibling.textContent;
-                increaseQuantity(name);
-            });
-        });
-
-        document.querySelectorAll(".decrease").forEach((button) => {
-            button.addEventListener("click", function () {
-                const name = this.parentElement.previousElementSibling.previousElementSibling.textContent;
-                decreaseQuantity(name);
-            });
-        });
-
-        updateCartCount();
-    }
-
-    function increaseQuantity(name) {
-        cart.forEach((item) => {
-            if (item.name === name) {
-                item.quantity++;
-            }
-        });
-        updateCartDisplay();
-    }
-
-    function decreaseQuantity(name) {
-        cart.forEach((item) => {
-            if (item.name === name && item.quantity > 1) {
-                item.quantity--;
-            }
-        });
-        updateCartDisplay();
-    }
-
-    function removeItemFromCart(name) {
-        cart = cart.filter((item) => item.name !== name);
-        updateCartDisplay();
-    }
-
-    function updateCartCount() {
-        const count = cart.reduce((acc, item) => acc + item.quantity, 0);
-        cartCountSpan.textContent = count;
-    }
-
-    function attachAddToCartEvents() {
-        document.querySelectorAll(".add-to-cart").forEach((button) => {
-            button.addEventListener("click", function (event) {
-                event.preventDefault();
-                const name = this.dataset.name;
-                const price = parseFloat(this.dataset.price);
-                addItemToCart(name, price);
-
-                this.classList.add("active");
-                setTimeout(() => {
-                    this.classList.remove("active");
-                }, 500);
-            });
-        });
-    }
-
-
-    // Simula a chamada fetch e processa os dados mockados
     const productList = document.getElementById("product-list");
+
     mockedData.forEach(product => {
         const productElement = document.createElement("div");
         productElement.className = "product";
@@ -216,22 +94,19 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class="product-name">${product.title}</p>
             <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
             <p class="product-price">R$ ${product.price}</p>
-            <button class="add-to-cart" data-name="${product.title}" data-price="${product.price}">Adicionar ao Carrinho</button>
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
         `;
 
         productList.appendChild(productElement);
     });
 
-    attachAddToCartEvents();
-
-    checkoutButton.addEventListener("click", function () {
-        alert("Finalizar Compra");
-    });
-
+    // Menu mobile
     const menuButton = document.querySelector(".menu-button");
     const nav = document.querySelector("nav");
 
-    menuButton.addEventListener("click", function () {
-        nav.classList.toggle("show-menu");
-    });
+    if (menuButton) {
+        menuButton.addEventListener("click", function () {
+            nav.classList.toggle("show-menu");
+        });
+    }
 });
