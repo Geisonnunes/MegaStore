@@ -80,33 +80,77 @@ const mockedData = [
         price: "1000.00"
     }
 ];
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
     const productList = document.getElementById("product-list");
 
-    mockedData.forEach(product => {
-        const productElement = document.createElement("div");
-        productElement.className = "product";
+    if (productList) {
+        mockedData.forEach(product => {
+            const productElement = document.createElement("div");
+            productElement.className = "product";
 
-        productElement.innerHTML = `
-            <img src="${product.image}" alt="${product.title}" class="product-image">
-            <p class="product-name">${product.title}</p>
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-            <p class="product-price">R$ ${product.price}</p>
-            <button class="add-to-cart">Adicionar ao Carrinho</button>
-        `;
+            productElement.innerHTML = `
+                <img src="${product.image}" alt="${product.title}" class="product-image">
+                <p class="product-name">${product.title}</p>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                <p class="product-price">R$ ${product.price}</p>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            `;
 
-        productList.appendChild(productElement);
-    });
+            productList.appendChild(productElement);
+        });
+    }
 
     // Menu mobile
     const menuButton = document.querySelector(".menu-button");
     const nav = document.querySelector("nav");
 
-    if (menuButton) {
-        menuButton.addEventListener("click", function () {
+    if (menuButton && nav) {
+        menuButton.addEventListener("click", () => {
             nav.classList.toggle("show-menu");
         });
     }
+
+    // ===== DROPDOWN ACCOUNT (HOVER DESKTOP + CLICK MOBILE) =====
+
+    const accounts = document.querySelectorAll(".account");
+    const isDesktop = window.matchMedia("(hover: hover)").matches;
+
+    function closeAll() {
+        accounts.forEach(acc => acc.classList.remove("active"));
+    }
+
+    accounts.forEach(account => {
+
+        if (isDesktop) {
+            let hoverTimeout;
+
+            account.addEventListener("mouseenter", () => {
+                clearTimeout(hoverTimeout);
+                closeAll();
+                account.classList.add("active");
+            });
+
+            account.addEventListener("mouseleave", () => {
+                hoverTimeout = setTimeout(() => {
+                    account.classList.remove("active");
+                }, 180); // delay seguro para acessar o submenu
+            });
+        }
+
+        // Clique (mobile e fallback)
+        account.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            const isActive = account.classList.contains("active");
+            closeAll();
+
+            if (!isActive) {
+                account.classList.add("active");
+            }
+        });
+    });
+    document.addEventListener("click", closeAll);
+
 });
+

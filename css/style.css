@@ -188,13 +188,7 @@ header {
   cursor: pointer;
 }
 
-.account {
-  align-items: center;
-  display: flex;
-  gap: 6px;
-  cursor: pointer;
-  position: relative;
-}
+/* Dropdown account menu styles */
 
 .account {
   display: flex;
@@ -208,30 +202,44 @@ header {
   font-size: 16px;
   color: #000;
 }
+
 .account .down {
   width: 12px;
   height: 12px;
   fill: #0084ff;
-  transition: trasform 0.3s ease;
-}
-
-.account:hover .modal-white {
-  display: block;
+  transition: transform 0.3s ease;
 }
 
 .modal-white {
   position: absolute;
   top: 35px;
   right: 0;
-  background: #ffff;
+  background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   padding: 15px;
   border-radius: 6px;
-  /* display: none; */
-  z-index: 10;
   min-width: 150px;
   text-align: center;
+  z-index: 999;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+}
+
+/* Ativo */
+.account.active .modal-white {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.account.active .down {
+  transform: rotate(180deg);
 }
 
 .modal-white a {
@@ -243,7 +251,7 @@ header {
 }
 
 .modal-white a:hover {
-  background-color: #999;
+  background-color: #f0f0f0;
 }
 
 .modal-white .step {
@@ -264,12 +272,8 @@ header {
 .modal-white .step::after {
   content: '';
   flex: 1;
-  height: 2px;
-  background: black;
-}
-
-.account:hover .down {
-  transform: rotate(180deg);
+  height: 1px;
+  background: #ccc;
 }
 
 .icon-search {
