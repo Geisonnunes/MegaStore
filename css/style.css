@@ -188,8 +188,6 @@ header {
   cursor: pointer;
 }
 
-/* Dropdown account menu styles */
-
 .account {
   display: flex;
   align-items: center;
@@ -230,7 +228,6 @@ header {
   transition: all 0.25s ease;
 }
 
-/* Ativo */
 .account.active .modal-white {
   opacity: 1;
   visibility: visible;

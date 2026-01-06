@@ -50,7 +50,33 @@
                             c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"
             ></path>
           </svg>
+
+          <div class="modal-white not-width">
+            <div class="line-options flex">
+              <div class="box-contact">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                  <path
+                    d="M26.948 12.168v-1.23a11.239 11.239 0 0 0-2.931-7.711A10.11 10.11 0 0 0 16.514 0H15.5A10.11 10.11 0 0 0 8 3.227a11.239 11.239 0 0 0-2.931 7.711v1.23a4.415 4.415 0 0 0-4.114 4.4v1.923a4.41 4.41 0 0 0 4.4 4.4h2.48a.809.809 0 0 0 .807-.807v-9.123a.809.809 0 0 0-.807-.807H6.679v-1.216c0-5.318 3.792-9.324 8.813-9.324h1.015c5.029 0 8.813 4.007 8.813 9.324v1.217h-1.155a.809.809 0 0 0-.807.807v9.116a.809.809 0 0 0 .807.807h1.129c-.329 4.208-3.227 5.183-4.571 5.405a2.837 2.837 0 0 0-2.7-1.956H16.01a2.834 2.834 0 0 0 0 5.667h2.024a2.837 2.837 0 0 0 2.729-2.084 7.631 7.631 0 0 0 2.736-.934 7.121 7.121 0 0 0 3.415-6.1 4.408 4.408 0 0 0 4.134-4.4v-1.925a4.392 4.392 0 0 0-4.1-4.39zm-19.906 9.1H5.368a2.792 2.792 0 0 1-2.79-2.79v-1.92a2.792 2.792 0 0 1 2.79-2.79h1.674zm10.992 9.116H16.01a1.217 1.217 0 0 1 0-2.434h2.024a1.217 1.217 0 0 1 0 2.434zm11.408-11.903a2.792 2.792 0 0 1-2.79 2.79h-1.674v-7.5h1.674a2.792 2.792 0 0 1 2.79 2.79z"
+                  ></path>
+                </svg>
+                <div class="title">Precisa de ajuda?</div>
+                <div class="option">
+                  <div class="value">Atendimento por Telefone</div>
+                  <a href="tel:" class="content">(99) 9999-9999</a>
+                </div>
+              </div>
+              <div class="rastreio">
+                <div class="title">Rastrear pedido</div>
+                <form target="_blank" method="post" action="https://www2.correios.com.br/sistemas/rastreamento/ctrl/ctrlRastreamento.cfm?">
+                  <input type="hidden" name="track" value="track" />
+                  <input autocomplete="off" type="text" name="objetos" placeholder="Digite seu código aqui" />
+                  <button class="botao-commerce">RASTREAR</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="account">
           <svg class="icon-user" xmlns="http://www.w3.org/2000/svg" viewBox="-42 0 512 512.001">
             <path
@@ -61,10 +87,6 @@
             ></path>
           </svg>
           <span class="login" data-logged-user="false">Minha Conta</span>
-          <span class="logout tray-hide" data-logged-user="true">
-            Olá,
-            <span data-customer="name"></span>
-          </span>
           <svg class="down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 284.929 284.929">
             <path
               d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441
@@ -74,7 +96,7 @@
             ></path>
           </svg>
           <div class="modal-white tray-hide" data-logged-user="true">
-            <a class="link-modal botao-commerce" href="#">Minha conta</a>
+            <a class="link-modal botao-commerce" href="/Login.html">Entrar</a>
             <span class="step"><span class="bg">ou</span></span>
             <a class="register sair" href="#">Sair</a>
           </div>
